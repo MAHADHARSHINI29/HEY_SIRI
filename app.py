@@ -23,7 +23,7 @@ import time
 import ctypes
 
 # Setup Google API Key
-google_api_key = "AIzaSyBUvjiVam5-5B_gat9gKQbSvNU8p6xwsY0"
+google_api_key = "#API_KEY"
 genai.configure(api_key=google_api_key)
 model = genai.GenerativeModel('gemini-1.0-pro-latest')
 
@@ -242,7 +242,7 @@ class VirtualAssistant:
             self.speak("Could not understand.")
 
     def get_news(self, category):
-        api_key = "1aedf86443d4474b8e53c8f0f051d5b7"
+        api_key = "#API_KEY"
         url = f"https://newsapi.org/v2/top-headlines?category={category}&apiKey={api_key}"
         response = requests.get(url)
         news_data = response.json()
@@ -262,7 +262,7 @@ class VirtualAssistant:
                 self.recognizer.adjust_for_ambient_noise(source)
                 audio = self.recognizer.listen(source)
                 city = self.recognizer.recognize_google(audio)
-        api_key = '6f64eb4c45a74139b3154fb1508327a1'
+        api_key = '#API_KEY'
         base_url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric'
         response = requests.get(base_url)
         if response.status_code == 200:
